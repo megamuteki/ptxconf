@@ -1,4 +1,5 @@
 #! /usr/bin/python
+# coding:utf-8
 import ptxconftools
 from ptxconftools import ConfController
 from ptxconftools.gtk import MonitorSelector
@@ -18,11 +19,11 @@ class PTXConfUI():
 
         # construct menu
         menu = gtk.Menu()
-        mitem = gtk.MenuItem("configure")
+        mitem = gtk.MenuItem("設定")
         menu.append(mitem)
         mitem.connect("activate", self.createConfigWindow)
         mitem.show()
-        mitem = gtk.MenuItem("exit")
+        mitem = gtk.MenuItem("終了する")
         menu.append(mitem)
         mitem.connect("activate", self.exit_program)
         mitem.show()
@@ -74,8 +75,8 @@ class PTXConfUI():
         self.window.set_title("PTXConf")
         self.window.connect("destroy", self.destroyConfigWindow)
 
-        button_apply = gtk.Button("Apply")
-        button_close = gtk.Button("Close")
+        button_apply = gtk.Button("適用")
+        button_close = gtk.Button("閉じる")
 
         button_close.connect("clicked", self.destroyConfigWindow)
         vbox = gtk.VBox(spacing=20)
@@ -88,8 +89,8 @@ class PTXConfUI():
         labelEmptySpace01 = gtk.Label()
         labelEmptySpace02 = gtk.Label()
 
-        label01 = gtk.Label("pointer device")
-        label02 = gtk.Label("monitor")
+        label01 = gtk.Label("入力デバイス")
+        label02 = gtk.Label("モニタ")
         # create monitor selector widget
         monSelector = MonitorSelector(self.myConf.monitorIds)
         # dropdown menus 1 and 2, users choose what input device map to what monitor.
@@ -98,17 +99,17 @@ class PTXConfUI():
         ptDropdown.set_tooltip_text("choose an input device to configure")
         # getting the list of names of the input device
         # set up the dropdown selection for input devices
-        ptDropdown.append_text('Select input device:')
+        ptDropdown.append_text('入力デバイスを選択してください。:')
         for i in self.myConf.penTouchIds:
             ptDropdown.append_text(i)
         ptDropdown.set_active(0)
         # ptDropdown.connect("changed", self.getActiveInput)
         # creat and set up dopdownmenu 2: user select from a list of connected display/output deivces.
         monitorDropdown = gtk.combo_box_new_text()
-        monitorDropdown.set_tooltip_text("choose a monitor to map the input to")
+        monitorDropdown.set_tooltip_text("マッピングするデバイスを選択してください。")
         # getting the list of display names
         # set up the dropdown selection for monitors
-        monitorDropdown.append_text('Select a monitor:')
+        monitorDropdown.append_text('モニタを選択してください。:')
         monitorDropdown.mons = self.myConf.monitorIds.keys()
         for key in monitorDropdown.mons:
             monitorDropdown.append_text(key)
