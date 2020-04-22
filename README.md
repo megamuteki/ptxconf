@@ -42,13 +42,13 @@ WenHsin Linda Jen 2015
 
 memo:ptxconfスタート画面
 
-![ptxconf](https://github.com/megamuteki/images/blob/master/ptxconft/ptxcof01.png)
+![ptxconf](https://github.com/megamuteki/images/blob/master/ptxconf/ptxconf01.png)
 
 
 
 memo:ptxconf設定画面
 
-![ptxconf](https://github.com/megamuteki/images/blob/master/ptxconf/pt02.png)
+![ptxconf](https://github.com/megamuteki/images/blob/master/ptxconf/ptxconf02.png)
 
 
 
