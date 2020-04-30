@@ -15,7 +15,7 @@ PTXconf を日本語化したものになります。
 
 $ sudo apt-get install xinput x11-xserver-utils 
 
-$ sudo apt-get install python-gtk2, python-appindicator  python-pip
+$ sudo apt-get install python-gtk2 python-appindicator  python-pip
 
 
 
